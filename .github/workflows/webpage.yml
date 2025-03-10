@@ -92,7 +92,11 @@ jobs:
           if [ -d temp_repo/${DIR} ]; then
             echo "with docs folder: temp_repo/${DIR}"
             find temp_repo/* -maxdepth 0 -name docs -prune -o -exec rm -rf {} \;
-            ls temp_repo/website/docs/ #tmp
+            # tmp
+            ls temp_repo
+            ls temp_repo/website
+            ls temp_repo/website/docs
+            ls temp_repo/website/docs/
             mv temp_repo/website/docs/* .
             rm -rf temp_repo
           else
