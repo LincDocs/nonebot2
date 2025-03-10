@@ -93,11 +93,11 @@ jobs:
             find temp_repo/* -maxdepth 0 -name docs -prune -o -exec rm -rf {} \;
             mv temp_repo/${DIR}* .
             rm -rf temp_repo
-            echo "with docs folder"
+            echo "with docs folder: temp_repo/${DIR}"
           else
             rsync -a temp_repo/ .
             rm -rf temp_repo
-            echo "without docs folder"
+            echo "without docs folder: temp_repo/${DIR}"
           fi
 
       # [!code] 根据实际情况修改 (需要在仓库配置写入以及和文档仓库clone这两个步骤的后面)
