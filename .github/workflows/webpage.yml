@@ -89,13 +89,11 @@ jobs:
           fi
 
           # 使用指定文件夹
-          if [ -d temp_repo/${DIR} ]; then
+          if [ -d "temp_repo/${DIR}" ]; then
             echo "with docs folder: temp_repo/${DIR}"
             # find temp_repo/* -maxdepth 0 -name docs -prune -o -exec rm -rf {} \;
-            ls -l temp_repo/website/docs
-            ls -l temp_repo/website/docs/
-            mv temp_repo/${DIR}/* .
-            rm -rf temp_repo/* .
+            # ls -l temp_repo/website/docs/ # debug
+            mv "temp_repo/${DIR}"/* .
             rm -rf temp_repo
           else
             echo "without docs folder: temp_repo/${DIR}"
