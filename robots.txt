@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://LincDocs.github.io/nonebot2/sitemap.xml
