@@ -78,26 +78,26 @@ jobs:
           # 该仓库为代理仓库时，使用链接仓库而非此仓库
           # TODO 支持agency多个仓库。如果想更通用，干脆支持直接运行agency里的命令组
           if [ -f temp_repo/agency ]; then
+            echo "with agency"
             GIT_LINK=$(sed -n '1p' temp_repo/agency)
             DIR=$(sed -n '2p' temp_repo/agency)
             rm -rf temp_repo
             git clone --depth 1 $GIT_LINK temp_repo
-            echo "with agency"
           else
-            DIR="docs/"
             echo "without agency"
+            DIR="docs/"
           fi
 
           # 使用指定文件夹
           if [ -d temp_repo/${DIR} ]; then
+            echo "with docs folder: temp_repo/${DIR}"
             find temp_repo/* -maxdepth 0 -name docs -prune -o -exec rm -rf {} \;
             mv temp_repo/${DIR}* .
             rm -rf temp_repo
-            echo "with docs folder: temp_repo/${DIR}"
           else
+            echo "without docs folder: temp_repo/${DIR}"
             rsync -a temp_repo/ .
             rm -rf temp_repo
-            echo "without docs folder: temp_repo/${DIR}"
           fi
 
           ls
