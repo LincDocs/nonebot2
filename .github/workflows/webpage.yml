@@ -89,7 +89,7 @@ jobs:
           fi
 
           # 使用指定文件夹
-          ls -la "temp_repo/${DIR}"
+          ls -la "temp_repo/website/"
           echo "---"
           if [ -d "temp_repo/${DIR}" ]; then
             echo "with docs folder: temp_repo/${DIR}"
