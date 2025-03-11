@@ -79,8 +79,8 @@ jobs:
           # TODO 支持agency多个仓库。如果想更通用，干脆支持直接运行agency里的命令组
           if [ -f temp_repo/agency ]; then
             echo "with agency"
-            GIT_LINK=$(sed -n '1p' temp_repo/agency)
-            DIR=$(sed -n '2p' temp_repo/agency)
+            GIT_LINK=$(sed -n '1p' temp_repo/agency | tr -d '\r')
+            DIR=$(sed -n '2p' temp_repo/agency | tr -d '\r')
             rm -rf temp_repo
             git clone --depth 1 $GIT_LINK temp_repo
           else
@@ -89,7 +89,6 @@ jobs:
           fi
 
           # 使用指定文件夹
-          ls -la "temp_repo/website/"
           ls -la "temp_repo/website/versioned_docs"
           ls -la "temp_repo/${DIR}"
           echo "---"
