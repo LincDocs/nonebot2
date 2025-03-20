@@ -1,5 +1,5 @@
 # nonebot2
-https://github.com/nonebot/nonebot2/tree/master/website/docs 的代理文档库
+https://github.com/nonebot/nonebot2/tree/master/website/docs 或 https://github.com/nonebot/nonebot2/tree/master/website/versioned_docs 的代理文档库
 
 该文档自动从原仓库中同步，但效果比不上原文档，也无法识别mdx文件。主要做个备份
 
